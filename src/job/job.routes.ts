@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', getJobs)
 router.get('/:id', getJobById)
-router.get('/', addJob)
+router.post('/', addJob)
 router.put('/:id', updateJob)
 router.delete('/:id', removeJob)
 
