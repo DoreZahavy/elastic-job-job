@@ -29,7 +29,7 @@ import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js';
 app.all('*', setupAsyncLocalStorage);
 import { jobRoutes } from './job/job.routes.js';
 
-app.use('/user', jobRoutes);
+app.use('/job', jobRoutes);
 
 // Make every server-side-route to match the index.html
 // app.get('/**', (req, res) => {
