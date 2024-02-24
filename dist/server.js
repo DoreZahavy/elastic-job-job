@@ -23,14 +23,9 @@ else {
 // Routes
 import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js';
 app.all('*', setupAsyncLocalStorage);
-import { userRoutes } from './user/user.routes.js';
-app.use('/api', userRoutes);
-// Make every server-side-route to match the index.html
-app.get('/**', (req, res) => {
-    res.sendFile(path.resolve('public/index.html'));
-});
-// Start the server
-const port = Number(process.env.PORT) || 3031;
+import { jobRoutes } from './job/job.routes.js';
+app.use('/job', jobRoutes);
+const port = Number(process.env.PORT) || 3034;
 server.listen(port, () => {
     console.log('Server is running on port: ' + port);
 });

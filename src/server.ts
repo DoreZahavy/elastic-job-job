@@ -31,12 +31,7 @@ import { jobRoutes } from './job/job.routes.js';
 
 app.use('/job', jobRoutes);
 
-// Make every server-side-route to match the index.html
-// app.get('/**', (req, res) => {
-//     res.sendFile(path.resolve('public/index.html'));
-// });
 
-// Start the server
 const port: number = Number(process.env.PORT) || 3034;
 server.listen(port, () => {
     console.log('Server is running on port: ' + port);

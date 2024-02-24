@@ -7,7 +7,9 @@ import { Job } from "../models/job.model.js";
 
 export async function getJobById(req: Request, res: Response) {
     try {
+        console.log('req.params.id' ,req.params.id)
         const job = await jobService.getById(req.params.id)
+        console.log("🚀 ~ getJobById ~ job:", job)
         res.send(job)
     } catch (err) {
         logger.error('Failed to get job', err)

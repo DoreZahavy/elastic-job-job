@@ -10,6 +10,12 @@ async function getCollection(collectionName) {
     try {
         const db = await _connect();
         const collection = db.collection(collectionName); // await
+        const changeStream = collection.watch();
+        changeStream.on('change', next => {
+            // process next document
+            console.log('inside changeStream watch');
+            console.log("🚀 ~ getCollection ~ next:", next);
+        });
         return collection;
     }
     catch (err) {
